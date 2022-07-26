@@ -4,10 +4,9 @@ public:
         
         vector<vector<int>> matrixReshape;
 	    matrixReshape.resize(r, vector<int>(c));
-        
         int row = 0, col = 0;
         
-        if(r*c!=mat.size()* mat[0].size()) return mat;
+        if(r * c != mat.size() * mat[0].size()) return mat;
         
         for(int i = 0 ;i < mat.size(); i++)
             for(int j = 0 ; j < mat[0].size(); j++)
