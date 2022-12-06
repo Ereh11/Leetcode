@@ -1,8 +1,8 @@
 class Solution {
 public:
-    bool isHappy(long long n) {
+    bool isHappy(int n) {
         map<int, bool> mp;
-        long long ans = 0;
+        int ans = 0;
         
         while(ans != 1)
         {
