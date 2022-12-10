@@ -2,10 +2,13 @@ class Solution {
 public:
     char findTheDifference(string s, string t) 
     {
-        char c;
-        for(auto& it: t)
-            if(count(s.begin(), s.end(), it) != count(t.begin(), t.end(), it)) c =it;
+        //char c;
+        vector<int> frqs(26), frqt(26);
+        for(auto& it: t) frqt[it - 97]++;
+        for(auto& it: s) frqs[it - 97]++;
+            
+        for(auto& it: t) if(frqt[it - 97] != frqs[it - 97]) return it;
         
-        return c;
+        return 'a';
     }
 };
