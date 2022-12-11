@@ -10,7 +10,7 @@ public:
                 ans.push_back(char(stoi(tp) + 96)), i +=2;
             }
             else
-                tp+=s[i], ans.push_back(char(stoi(tp) + 96));
+                tp +=s[i], ans.push_back(char(stoi(tp) + 96));
             tp.clear();
         }
         
