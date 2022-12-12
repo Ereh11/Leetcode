@@ -12,13 +12,16 @@
 class Solution {
 public:
     int ans = 0;
+    
     void DFS(TreeNode* root, bool b)
     {
-        if(root!= nullptr && root->left == nullptr && root->right == nullptr && b == 1 ) ans +=root->val;
         if(root == nullptr) return;
+        if(root!= nullptr && (root->left == nullptr && root->right == nullptr) && b == 1 ) ans +=root->val;
+        
         DFS(root->left, 1);
         DFS(root->right, 0);
     }
+    
     int sumOfLeftLeaves(TreeNode* root) {
         DFS(root, 0);
         return ans;
