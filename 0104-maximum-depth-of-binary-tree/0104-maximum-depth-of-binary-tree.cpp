@@ -13,9 +13,9 @@ class Solution {
 public:
     int maxDepth(TreeNode* root) {
         if(root == nullptr) return 0;
-        int lf = maxDepth(root->left);
-        int rt = maxDepth(root->right);
-        
-        return max(lf, rt) + 1; 
+        int lf = 1 + maxDepth(root->left);
+        int rt = 1 + maxDepth(root->right);
+       // cout<< lf <<" "<< rt <<"\n";
+        return max(lf, rt); 
     }
 };
