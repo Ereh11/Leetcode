@@ -4,21 +4,22 @@ private:
 public:
     MyQueue() {}
     
-    void push(int x) {
-        f.push(x);
+    void push(int x) { f.push(x); }
+    
+    void check()
+    {
+        if(s.empty())
+            while(!f.empty()) s.push(f.top()), f.pop();
     }
     
     int pop() {
-        if(s.empty())
-            while(!f.empty()) s.push(f.top()), f.pop();
+        check();
         int x = s.top(); s.pop();
         return x;
     }
     
     int peek() {
-        if(s.empty())
-            while(!f.empty()) s.push(f.top()), f.pop();
-        
+        check();
         return s.top();
     }
     
