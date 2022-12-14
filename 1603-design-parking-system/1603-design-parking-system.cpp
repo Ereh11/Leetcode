@@ -6,8 +6,6 @@ public:
         big = b;
         medium = m;
         small = s;
-        
-        cout<<big << " "<< medium<<" "<<small;
     }
     
     bool addCar(int carType) 
