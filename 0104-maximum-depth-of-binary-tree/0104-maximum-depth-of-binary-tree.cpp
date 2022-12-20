@@ -15,7 +15,7 @@ public:
         if(root == nullptr) return 0;
         int lf = 1 + maxDepth(root->left);
         int rt = 1 + maxDepth(root->right);
-       // cout<< lf <<" "<< rt <<"\n";
+       
         return max(lf, rt); 
     }
 };
