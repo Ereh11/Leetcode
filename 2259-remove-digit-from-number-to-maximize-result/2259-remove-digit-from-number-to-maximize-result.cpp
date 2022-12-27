@@ -5,10 +5,8 @@ public:
         string ans, mx = "";
         for(int i = 0 ; i < s.size() ; i++)
         {
-            string s1 = (!i) ? "" : s.substr(0, i);
-            string s2 = s.substr(i + 1,  s.size());
             
-            if(s[i] == d) ans =  s1 + s2;
+            if(s[i] == d) ans =  s.substr(0, i) + s.substr(i + 1,  s.size());
             
             mx = max(mx, ans);
         }
