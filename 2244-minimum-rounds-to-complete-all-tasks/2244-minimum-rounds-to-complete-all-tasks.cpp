@@ -1,12 +1,11 @@
 class Solution {
 public:
     int minimumRounds(vector<int>& tasks) {
-        set<int> se;
         int ans = 0;
-        map<int, int> mp;
-        for(auto& it: tasks) se.insert(it), mp[it]++;
+        unordered_map<int, int> mp;
+        for(auto& it: tasks) mp[it]++;
         
-        for(auto& it: se){
+        for(auto& it: tasks){
             while(1) 
             {
                 if(mp[it] == 1) return -1;
