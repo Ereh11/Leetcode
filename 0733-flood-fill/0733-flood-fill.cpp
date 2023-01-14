@@ -25,25 +25,3 @@ public:
         return image;
     }
 };
-/*
-
-
-        queue<pair<int, int>> qu; qu.push({sr, sc});
-        int n= image.size(), m= image[0].size();
-        vector<vector<bool>> vis(n, vector<bool>(m, 0));
-        vis[sr][sc]= 1;
-        while(!qu.empty())
-        {
-            pair<int, int> ft= qu.front(); qu.pop();
-            for(int i=0 ;i < 4; i++)
-            {
-                int x= dx[i] + ft.first, y= dy[i] + ft.second;
-                if(check(x, y, n, m) && !vis[x][y] && image[x][y] == image[sr][sc]) 
-                    qu.push({x, y}), image[x][y]= color, vis[x][y] = 1;
-            }
-        }
-        image[sr][sc]= color;
-        return image;
-    }
-
-*/
