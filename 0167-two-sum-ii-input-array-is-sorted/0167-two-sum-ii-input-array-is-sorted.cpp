@@ -5,7 +5,8 @@ public:
         vector<int> ans;
         while(l < r)
         {
-            if(v[l] + v[r] == t) {
+            if(v[l] + v[r] == t) 
+            {
                 ans.push_back(l + 1), ans.push_back(r + 1);
                 break;
             }
