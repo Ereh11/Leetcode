@@ -3,9 +3,9 @@ public:
     int dx[4] = {1, -1, 0, 0};
     int dy[4] = {0, 0, 1, -1};
     int n, m;
-    vector<vector<int>> dist, vis;
+    vector<vector<int>> dist;
     
-    bool check(int r, int c) { return(r>=0 && r<n && c>=0 && c<m && !vis[r][c]); }
+    bool check(int r, int c) { return(r >= 0 && r < n && c >= 0 && c < m); }
     
     int BFS(int r, int c, vector<vector<char>>& maze)
     {
@@ -14,7 +14,7 @@ public:
         while(!qu.empty())
         {
             auto ft = qu.front(); qu.pop();
-            vis[ft.first][ft.second] = 1;
+            maze[ft.first][ft.second] = '+';
             for(int i = 0 ; i < 4; i++)
             {
                 int x = ft.first + dx[i], y = ft.second + dy[i];
@@ -23,7 +23,8 @@ public:
                 
                 if(check(x, y) && maze[x][y] == '.')
                 {
-                    qu.push({x, y}), dist[x][y] = dist[ft.first][ft.second] + 1, vis[x][y] = 1;
+                    qu.push({x, y}), dist[x][y] = dist[ft.first][ft.second] + 1;
+                    maze[x][y] = '+';
                 } 
             }
         }
@@ -33,7 +34,7 @@ public:
     
     int nearestExit(vector<vector<char>>& maze, vector<int>& e) {
         n = maze.size(), m = maze[0].size();
-        vis.resize(n, vector<int>(m)), dist.resize(n, vector<int>(m));
+        dist.resize(n, vector<int>(m));
         return BFS(e[0], e[1], maze);
     }
 };
