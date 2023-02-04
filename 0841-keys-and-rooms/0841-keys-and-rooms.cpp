@@ -1,21 +1,28 @@
 class Solution {
 public:
-    vector<bool> vis;
-    void DFS(int node, vector<vector<int>>& rooms)
+    vector<int> edge[1000], vis;
+    void DFS(int node)
     {
-	    vis[node] = 1;
-	    for (auto& it : rooms[node])
-		    if (!vis[it]) DFS(it, rooms);
+        vis[node] = 1;
+        for(auto& child: edge[node])
+            if(!vis[child]) DFS(child);
     }
-    bool canVisitAllRooms(vector<vector<int>>& rooms) {
+    bool canVisitAllRooms(vector<vector<int>>& rooms) 
+    {
+        int n = rooms.size();
+        vis.resize(n);
+        for(int i = 0; i < n ;i++)
+            for(auto& col: rooms[i]) edge[i].push_back(col);
         
-        vis.resize(rooms.size());
-        DFS(0, rooms);
-        
-        for(int i = 0 ; i < rooms.size() ; i++)
-            for(int j = 0 ; j < rooms[i].size() ; j++) 
-                if(!vis[rooms[i][j]]) return false;
+        DFS(0);
+        for(int i = 0; i < rooms.size() ;i++)
+            if(!vis[i]) return false;
         
         return true;
     }
 };
+
+
+/*
+
+*/
