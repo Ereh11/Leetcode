@@ -1,8 +1,8 @@
 class Solution {
 public:
     
-    int j1, j2;
-    bool BFS(int target)
+    
+    bool BFS(int &j1, int &j2, int &target)
     {
         int total = j1 + j2;
         vector<int> vis(1e6 + 1);
@@ -29,8 +29,7 @@ public:
     
     bool canMeasureWater(int cap1, int cap2, int targetCapacity) 
     {
-        j1 = cap1, j2 = cap2;
-        return BFS(targetCapacity);
+        return BFS(cap1, cap2, targetCapacity);
     }
 };
 
