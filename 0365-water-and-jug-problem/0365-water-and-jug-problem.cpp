@@ -4,7 +4,6 @@ public:
     
     bool BFS(int &j1, int &j2, int &target)
     {
-        int total = j1 + j2;
         vector<int> vis(1e6 + 1);
         queue<int> qu; 
         qu.push(0); vis[0] = 1;
@@ -18,7 +17,7 @@ public:
             for(int i = 0 ; i < 4 ; i++) 
             {
                 int nw = ft + operation[i];
-                if(nw >= 0 && nw <= total && !vis[nw])
+                if(nw >= 0 && nw <= (j1 + j2) && !vis[nw])
                     vis[nw] = 1, qu.push(nw);
             }
         }
