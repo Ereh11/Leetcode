@@ -2,10 +2,12 @@ class Solution {
 public:
     int dx[4] = { 1, -1, 0, 0 };
     int dy[4] = { 0, 0, 1, -1 };
+    
     int n, m;
     vector<vector<int>> dist;
     queue<pair<int, int>> qu;
     bool check(int r, int c) { return (r >= 0 && r < n && c >= 0 && c < m); }
+    
     void BFS()
     {
         while(!qu.empty())
@@ -22,6 +24,7 @@ public:
             }
         }
     }
+    
     vector<vector<int>> updateMatrix(vector<vector<int>>& mat) {
         n = mat.size(), m = mat[0].size();
         dist.resize(n, vector<int>(m, INT_MAX));
