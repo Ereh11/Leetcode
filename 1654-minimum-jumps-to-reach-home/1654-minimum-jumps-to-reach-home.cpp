@@ -1,6 +1,7 @@
 class Solution {
 public:
-    int minimumJumps(vector<int>& forbidden, int a, int b, int x) {
+    int minimumJumps(vector<int>& forbidden, int a, int b, int x) 
+    {
       unordered_map<int, bool> vis;
       int mx = 0, ans = 0;
 
@@ -34,6 +35,6 @@ public:
 	        ans++;
         }
 
-            return -1;
+        return -1;
     }
 };
