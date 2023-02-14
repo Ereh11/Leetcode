@@ -9,7 +9,6 @@ public:
         for(auto& child: edge[node])
             if(!color[child]) color[child] = 2 - color[node], DFS(child);
             else if(color[child] == color[node]){ ans = 0; return; }
-            //else DFS(child);
     }
     bool possibleBipartition(int n, vector<vector<int>>& dislikes) {
         color.resize(n + 1);
