@@ -3,9 +3,11 @@ public:
     vector<int> shortestAlternatingPaths(int n, vector<vector<int>>& redEdges, vector<vector<int>>& blueEdges) 
     {
             vector<vector<pair<int, int>>> edge(n);
-            for (auto& it : redEdges) edge[it[0]].push_back({it[1], 0});
+            for (auto& it : redEdges) 
+                edge[it[0]].push_back({it[1], 0});
         
-            for (auto& it : blueEdges) edge[it[0]].push_back(make_pair(it[1], 1));
+            for (auto& it : blueEdges) 
+                edge[it[0]].push_back(make_pair(it[1], 1));
         
             vector<vector<int>> vis(n, vector<int>(2));
             vector<int> ans(n, -1);
