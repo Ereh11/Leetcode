@@ -1,13 +1,5 @@
 class Solution {
 public:
-   
-    set<int> ans;
-    int cnt = 0;
-    void DFS(int node, int sz)
-    {
-      
-        
-    }
     vector<int> eventualSafeNodes(vector<vector<int>>& graph) 
     {
         int n = graph.size();
