@@ -4,6 +4,7 @@ public:
     {
         int n = nums.size(), l = 0, r = n - 1, mid;
         if(n == 1) return nums[0];
+        
         while(l <= r)
         {
             mid = ((l + r) >> 1);
