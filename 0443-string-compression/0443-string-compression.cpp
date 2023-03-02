@@ -18,8 +18,6 @@ public:
                     
                     while(indxForTp < tp.size() && indxForTp < n)
                             s[indx++] = tp[indxForTp++];
-                    while(indxForTp < tp.size())
-                            s.push_back(tp[indxForTp++]);
                 }
             }
         }
