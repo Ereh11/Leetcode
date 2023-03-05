@@ -9,9 +9,10 @@ public:
         {
             long long mn = min(height[p1], height[p2]);
             ans = max(ans, mn * (p2 - p1));
+            
             if(height[p1] < height[p2]) 
                 p1++;
-            else if(height[p1] >= height[p2]) 
+            else  
                 p2--;
         }
         
