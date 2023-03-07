@@ -6,9 +6,9 @@ public:
     bool BS(vector<int>& time, int &totalTrips, long long &assuming_time)
     {
         long long ans = 0;
-        for(auto& it: time) {
-            ans += assuming_time / it; 
-        }
+        
+        for(auto& it: time)
+            ans += (assuming_time / it); 
         
         return ans >= totalTrips;
     }
