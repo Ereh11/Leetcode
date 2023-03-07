@@ -9,8 +9,6 @@ public:
         {
             if(g[p1] <= s[p2])
                 ans++, p1++, p2++;
-            else if(g[p1] < s[p2]) 
-                p1++;
             else 
                 p2++;
         }
