@@ -16,7 +16,7 @@ public:
     long long minimumTime(vector<int>& time, int totalTrips) {
         
         
-        long long l = 1, r = 1e14, assuming_time;
+        long long l = 1, r = 1e14, assuming_time = 0;
         while(l <= r)
         {
             assuming_time = ((l + r) >> 1);
