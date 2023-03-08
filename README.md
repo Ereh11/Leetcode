@@ -5,3 +5,8 @@
   <br>
   <br>
 </p>
+
+
+# Leetcode-Solutions:
+
+This repo will contain all my solutions to leetcode's problems and it will be held the many Leetcode cards' problems
