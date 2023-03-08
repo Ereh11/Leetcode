@@ -4,7 +4,7 @@ public:
         int ans = 0;
         
         for(auto& it: nums) {
-            int sz = int(log10(it)) + 1;
+            int sz = floor(log10(it)) + 1;
             ans += (!(sz & 1));
         }
         
