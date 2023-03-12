@@ -1,29 +1,24 @@
 class Solution {
 public:
-    int res = 0;
-    void solve(vector<int>& nums, vector<int> ans, int indx)
+    
+    void solve(vector<int>& nums, int &sum, int res, int indx)
     {
-        if(indx == nums.size())
-        {
-            int Xor = 0;
-            for(auto& it: ans)  Xor ^=  it;
-            
-            res += Xor;
+        if(indx == nums.size()){
+            sum += res;
             return;
-        }
+        } 
         
-        ans.push_back(nums[indx]);
-        solve(nums, ans, indx + 1);
-        ans.pop_back();
-        solve(nums, ans, indx + 1);    
+        
+        solve(nums, sum, (res ^ nums[indx]), indx + 1);
+       
+        solve(nums, sum, res, indx + 1);    
     }
     
     int subsetXORSum(vector<int>& nums) {
+        int sum = 0;
         
-        vector<int> ans;
+        solve(nums, sum, 0, 0);
         
-        solve(nums, ans, 0);
-        
-        return res;
+        return sum;
     }
 };
