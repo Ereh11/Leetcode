@@ -2,10 +2,9 @@ class Solution {
 public:
     bool vis[15];
     int ans = 0, mx = 0;
+    
     void solve(vector<string>& words, int indx, vector<int>& score, vector<int>& frq)
-    {
-        //if(indx == words.size()) return;
-        
+    {   
         for(int i = indx ; i < words.size() ; i++)
         {
             bool isExist = 1;
@@ -15,7 +14,7 @@ public:
                 isExist &= (frq[it - 'a'] != 0), calcuScore += score[it - 'a'];
                 frq[it - 'a']--;
             }
-            //cout<< words[i] << " " << isExist <<" "<<calcuScore<<"\n";
+            
             if(!vis[i] && isExist)
             {
                 vis[i] = 1;
