@@ -11,6 +11,7 @@ public:
             {
                 vis[i] = 1;
                 ans.push_back(nums[i]);
+                
                 if(uset.find(ans) == uset.end())
                     uset.insert(ans);
                 
