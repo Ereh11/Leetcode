@@ -1,7 +1,6 @@
 class Solution {
 public:
     vector<string> res;
-    bool vis[13];
     void solve(string &s, int indx, string ans)
     {
         if(indx == s.size()) {
