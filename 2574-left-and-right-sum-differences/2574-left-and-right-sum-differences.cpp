@@ -7,6 +7,7 @@ public:
         for(auto& it: nums) {
             sumAll += it;
         }
+        
         for(int i = 0 ; i < nums.size() ; i++) {
             sumLeft += ((i) ? nums[i - 1] : 0);
             ans.push_back(abs(2 * sumLeft - (sumAll - nums[i])));
