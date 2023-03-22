@@ -1,19 +1,19 @@
 class Solution {
 public:
-    void solve(string &required, int &n, string ans, set<string> &se)
+    void solve(int &n, string ans, set<string> &se)
     {
         if(ans.size() == n)  {
             se.insert(ans);
             return;
         }
         
-        for(int i = 0; i < 3 ; i++) 
+        for(char ch = 'a'; ch <= 'c' ; ch++) 
         {
-            if(ans.empty() || (!ans.empty() && ans.back() != required[i]))  
+            if(ans.empty() || (!ans.empty() && ans.back() != ch))  
             {
-                ans.push_back(required[i]);
+                ans.push_back(ch);
                 
-                solve(required, n, ans, se);
+                solve(n, ans, se);
                 
                 ans.pop_back();
             }
@@ -24,9 +24,8 @@ public:
     string getHappyString(int n, int k) 
     {
         set<string> se;
-        string required = "abc";
         
-        solve(required, n, "", se);
+        solve(n, "", se);
         vector<string> ans = vector(se.begin(), se.end());
         
         return ( (k <= ans.size()) ? ans[k - 1] : "");
