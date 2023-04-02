@@ -11,7 +11,7 @@
  */
 class Solution {
 public:
-    void Traverse(TreeNode* root, int &low, int &high, long long &ans)
+    void Traverse(TreeNode* root, int &low, int &high, int &ans)
     {
         if(root == NULL)    return;
         
@@ -24,7 +24,7 @@ public:
     }
     
     int rangeSumBST(TreeNode* root, int low, int high) {
-        long long ans = 0;
+        int ans = 0;
         Traverse(root, low, high, ans);
         
         return ans;
