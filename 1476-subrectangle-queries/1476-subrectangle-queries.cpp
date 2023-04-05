@@ -1,5 +1,4 @@
 class SubrectangleQueries {
-public:
     private: 
     vector<vector<int>> ans;
     
