@@ -1,18 +1,22 @@
 class Solution {
 public:
     vector<int> leftRigthDifference(vector<int>& nums) {
-        vector<int> ans;
-        int sumAll = 0, sumLeft = 0;
+        int sfx = 0, pfx = 0;
         
         for(auto& it: nums) {
-            sumAll += it;
+            sfx += it;
         }
         
-        for(int i = 0 ; i < nums.size() ; i++) {
-            sumLeft += ((i) ? nums[i - 1] : 0);
-            ans.push_back(abs(2 * sumLeft - (sumAll - nums[i])));
+        for(auto& it: nums) 
+        {
+            int val = it;
+            pfx += it;
+            
+            it = abs(sfx - pfx);
+            
+            sfx -= val;
         }
         
-        return ans;
+        return nums;
     }
 };
