@@ -12,8 +12,6 @@ public:
             ans = *st.begin();
             st.erase(st.begin());
         } 
-        // Otherwise, the smallest number of large positive set 
-        // denoted by 'currentInteger' is the answer.
         else {
             ans = cnt;
             cnt += 1;
